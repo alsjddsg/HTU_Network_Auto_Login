@@ -1,14 +1,14 @@
 # 河南师范大学校园网自动登录 by alsjddsg
 
-开机或手动运行后，向学校认证接口提交账号，省去每次打开 Portal 页面点登录。
+开机或手动运行后，向学校认证接口提交账号，省去每次打开 Portal 页面点登录
 
-> 个人自用脚本。账号仅存本机
+> 个人自用脚本 账号仅存本机
 
 ## 环境
 
 - Windows 10 / 11
 - Python 3.8+
-- 已连接到河南师大校园网（会弹出 `10.101.2.194:6060` 登录页的那种）
+- 已连接到河南师大校园网（会弹出 `10.101.2.194:6060` 登录页）
 
 ```bat
 pip install -r requirements.txt
@@ -23,7 +23,7 @@ pip install -r requirements.txt
    - 电信 `@dx`
 3. 双击 `立即登录.bat` 试一次
 
-也可以直接复制 `config.example.json` 为 `config.json` 再手工改。
+也可以直接复制 `config.example.json` 为 `config.json` 手动更改
 
 ## 开机自启
 
@@ -32,7 +32,7 @@ pip install -r requirements.txt
 | 添加 | 双击 `安装开机启动.bat` |
 | 删除 | 双击 `卸载开机启动.bat` |
 
-安装后会在「任务计划程序」里生成任务 `HTUCampusNetLogin`：每次登录 Windows 约 30 秒后静默认证。已经能上网则脚本直接退出。
+安装后会在「任务计划程序」里生成任务 `HTUCampusNetLogin`：每次登录 Windows 约 30 秒后静默认证 若已经能上网则脚本直接退出
 
 命令行等价：
 
@@ -62,9 +62,9 @@ Content-Type: application/x-www-form-urlencoded
 
 字段：`campusCode`、`username`、`password`、`operatorSuffix`。
 
-先访问 `http://www.msftconnecttest.com/connecttest.txt` 判断是否已放行，避免重复登录。
+先访问 `http://www.msftconnecttest.com/connecttest.txt` 判断是否已放行，避免重复登录
 
-`campusCode` 来自一次真实登录抓包，一般是学校固定值。若学校改认证系统，需要重新抓 `auth` 请求。
+`campusCode` 来自一次真实登录抓包，一般是学校固定值。若学校改认证系统，需要重新抓 `auth` 请求
 
 ## 注意
 
